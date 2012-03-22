@@ -1,0 +1,6 @@
+<%= form_for @comentario do |f| %>
+	Comentario: <%= f.text_area :conteudo %><br/>
+	Comentavel: <%= f.text_field :comentavel_id %><br/>
+	Tipo: <%= f.text_field :comentavel_type %><br/>
+	<%= submit_tag "Atualizar" %>
+<% end %>

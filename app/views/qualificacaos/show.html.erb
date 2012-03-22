@@ -1,0 +1,29 @@
+<h1>Qualificações</h1>
+
+<p>
+	<strong>Cliente</strong>
+	<%= show_nome( @qualificacao.cliente, "---" ) %>
+</p>
+
+<p>
+	<strong>Restaurante</strong>
+	<%= show_nome( @qualificacao.restaurante, "---" ) %>
+</p>
+
+<p>
+	<strong>Nota</strong>
+	<%= @qualificacao.nota %>
+</p>
+
+<p>
+	<strong>Valor</strong>
+	<%= valor_formatado( @qualificacao.valor_gasto ) %>
+</p>
+
+<%= link_to "Editar", { :action => "edit", :id => @qualificacao } %>
+
+<%= link_to "Voltar", { :action => "index" } %> 
+
+<% unless @qualificacao.comentarios.empty? %>
+	<%= comentarios @qualificacao %>
+<% end %>

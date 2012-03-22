@@ -1,0 +1,27 @@
+<h1>Listagem de restaurantes</h1>
+
+<table>		
+	<tr>
+		<th>Nome:</th>
+		<th>Endereço</th>
+		<th>Especialidade</th>
+	</tr>
+
+	<% @restaurantes.each do |restaurante| %>
+
+	<tr>
+		<td><%= restaurante.nome %></td>
+		<td><%= restaurante.endereco %></td>
+		<td><%= restaurante.especialidade %></td>
+		<td><%= link_to "Mostrar", restaurante_path( restaurante ) %></td>
+		<td><%= link_to "Editar", edit_restaurante_path( restaurante ) %></td>
+		<td><%= link_to "Deletar", restaurante_path( restaurante), :method => :delete, :confirm => "certeza?"  %></td>
+	</tr>
+
+	<% end %>
+
+</table>
+
+<br/>
+
+<%= link_to "Novo", { :action => "new" } %>

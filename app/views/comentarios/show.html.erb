@@ -1,0 +1,30 @@
+<h1>Exibindo Comentarios</h1>
+
+<p>
+	<strong>Comentario:</strong>
+	<%= @comentario.conteudo %>
+</p>
+
+<br/>
+
+<p>
+	<strong>Comentavel:</strong>
+	<%= @comentario.comentavel_id %>
+</p>
+
+<br/>
+
+<p>
+	<strong>Tipo:</strong>
+	<%= @comentario.comentavel_type %>
+</p>
+
+<br/>
+
+<%= link_to "Novo Comentario", :controller => "comentarios",
+								 :action => "new",
+								 :cliente => @cometario %>
+
+<%= link_to "Editar", { :action => "edit", :id => @comentario } %>
+
+<%= link_to "Voltar", { :action => "index" } %>

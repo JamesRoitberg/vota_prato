@@ -1,0 +1,39 @@
+<h1>Exibindo Restaurante</h1>
+
+<p>
+	<strong>Nome: </strong>
+	<%= @restaurante.nome %>
+</p>
+
+<p>
+	<strong>Endereço: </strong>
+	<%= @restaurante.endereco %>
+</p>
+
+<p>
+	<strong>Especialidade: </strong>
+	<%= @restaurante.especialidade %>
+</p>
+
+<p>	
+	<strong>Nota Media: </strong>
+	<%= @restaurante.qualificacaos.average( :nota ) %>
+</p>
+
+<p>	
+	<strong>Qualificações: </strong>
+	<%= @restaurante.qualificacaos.count %>
+</p>
+
+<p>	
+	<strong>Valor Gasto: </strong>
+	<%= @restaurante.qualificacaos.average( :valor_gasto ) %>
+</p>
+
+<%= link_to "Editar", { :action => "edit", :id => @restaurante } %>
+
+<%= link_to "Voltar", { :action => "index" } %> 
+
+<% unless @restaurante.comentarios.empty? %>
+	<%= comentarios @restaurante %>
+<% end %>

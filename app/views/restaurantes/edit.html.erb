@@ -1,0 +1,12 @@
+<h1>Editantdo Restaurante</h1>
+
+<% if @restaurante.errors.any? %>
+	<ul>
+		<% @restaurante.errors.full_message.each do |meg|%>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= render :partial => "form" %>
+<%= link_to "Voltar", { :action => "index" } %>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Programa de Qualificação de Restaurantes</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "jquery.min", "jquery_ujs" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= menu_principal %>
+		<p style="color: green"><%= flash[:notice] %></p>
+		<%= yield %>
+
+		<script type="text/javascript">
+			<%= yield :js %>
+		</script>
+
+	</body>
+</html>

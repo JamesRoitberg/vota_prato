@@ -1,0 +1,13 @@
+<h1>Nova Qualificação</h1>
+
+<% if @qualificacao.errors.any? %>
+	<ul>
+		<% @qualificacao.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>	
+<% end %>
+
+<%= render :partial => "form" %>
+
+<%= link_to "Voltar", { :action => "index" } %>

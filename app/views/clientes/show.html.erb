@@ -1,0 +1,23 @@
+<h1>Exibindo Clientes</h1>
+
+<p>
+	<strong>Nome:</strong>
+	<%= @cliente.nome %>
+</p>
+
+<br/>
+
+<p>
+	<strong>Idade:</strong>
+	<%= @cliente.idade %>
+</p>
+
+<br/>
+
+<%= link_to "Nova Qualificacao", :controller => "qualificacaos",
+								 :action => "new",
+								 :cliente => @cliente %>
+
+<%= link_to "Editar", { :action => "edit", :id => @cliente } %>
+
+<%= link_to "Voltar", { :action => "index" } %>

@@ -1,0 +1,13 @@
+<h1>Adicionando Comentario</h1>
+
+<% if @comentario.errors.any? %>
+	<ul>
+		<% @comentario.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>	
+
+<%= render :partial => "form" %>
+
+<%= link_to "Voltar", { :action => "index"} %>

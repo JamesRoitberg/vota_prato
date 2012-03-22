@@ -1,0 +1,29 @@
+<%= form_for @qualificacao do |f| %>
+	<% if @qualificacao.cliente %>
+		<% f.hidden_field "cliente_id" %>
+	<% else %>
+		<p>
+			<%= f.label :cliente_id %>
+			<%= f.collection_select( :cliente_id, Cliente.order( "nome" ),
+			:id, :nome, { :prompt => true })  %>
+		</p>
+	<% end %>
+	<br/>
+
+	<% if @qualificacao.restaurante %>
+		<% f.hidden_field "restaurante_id" %>
+	<% else %>
+		<p>	
+			<%= f.label :restaurante_id %>
+			<%= f.collection_select( :restaurante_id, Restaurante.order( "nome" ),
+			:id, :nome, { :prompt => true}) %>
+		</p>
+	<% end %>
+	<br/>
+
+	Nota: <%= f.text_field :nota %><br/>
+
+	Valor: <%= f.text_field :valor_gasto %><br/>
+	
+	<%= submit_tag "Atualizar"%>
+<% end %>

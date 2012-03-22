@@ -1,0 +1,2 @@
+class ReceitasController < ApplicationController
+end

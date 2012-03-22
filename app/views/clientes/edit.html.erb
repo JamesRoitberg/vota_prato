@@ -1,0 +1,13 @@
+<h1>Editar um Cliente</h1>
+
+<% if @cliente.errors.any? %>
+	<ul>
+		<% @cliente.errors.full_message.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= render :partial => "form" %>
+
+<%= link_to "Voltar", { :action => "index" } %>

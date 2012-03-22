@@ -1,0 +1,2 @@
+class PratosController < ApplicationController
+end
